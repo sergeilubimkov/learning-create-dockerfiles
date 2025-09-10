@@ -1,0 +1,39 @@
+1. Python-скрипт "Hello, World"
+	Напиши маленький app.py → выводит "Hello, world!" в консоль.
+	Сделай Dockerfile, который запускает этот скрипт.
+2. Node.js-скрипт "Hello, World"
+	Файл index.js, который печатает "Hello, world!".
+	Dockerfile для Node.
+3. Static HTML через Nginx
+	Возьми index.html + style.css.
+	Dockerfile, который кладёт их в /usr/share/nginx/html.
+4. Python API (Flask)
+	Делает /hello → возвращает "Hello from Flask".
+	Dockerfile должен ставить Flask и запускать.
+5. Node.js API (Express)
+	Сервер с /hello → "Hello from Express".
+	Multi-stage сборка (build → run).
+6. Go HTTP сервер
+	Сервер отвечает "Hello from Go".
+	Multi-stage: golang:1.23 → alpine:3.22.
+7. Custom Nginx config
+	Создай nginx.conf, который делает редирект /old → /new.
+	Dockerfile, который подсовывает этот конфиг в контейнер.
+8. Redis с кастомным конфигом
+	Возьми redis:7.
+	Подсунь redis.conf (например, включи appendonly yes).
+	Dockerfile, который запускает Redis с этим конфигом.
+9. Cron контейнер
+	Создай Python-скрипт, который пишет дату/время в файл.
+	Сделай Dockerfile на базе python:3.12-slim.
+	Добавь в контейнер cron, настрой выполнение каждые 10 секунд.
+10. Multi-stage React (или Vue) build
+	Этап 1: node:22 → npm install && npm run build.
+	Этап 2: nginx:alpine → копируешь build/ в /usr/share/nginx/html.
+11. Multi-stage Java (Spring Boot)
+	Этап 1: maven:3.9-jdk-17 → mvn package.
+	Этап 2: openjdk:17-jdk-slim → копируешь app.jar.
+12. Alpine + bash-утилита
+	Собери контейнер на alpine, который запускает echo "Hello from Alpine".
+	Минимально маленький образ.
+
